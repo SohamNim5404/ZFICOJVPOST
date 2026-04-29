@@ -1,0 +1,5 @@
+@EndUserText.label: 'JV UPLOAD'
+define service ZSD_JV_HDR {
+  expose ZJV_C_XL_USER as XLHead;
+  expose ZC_ACCDOC     as XLData;
+}

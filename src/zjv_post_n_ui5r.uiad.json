@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Vendor payment post"
+  },
+  "ui5AppDetails": {
+    "appId": "zjvpostn"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_6834AA4D919918BBA001A3F2F8FF365112285A2B_TM",
+    "semanticObject": "zjv_post_n",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_6834AA4D919918BBA001A3F2F8FF365112285A2B_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Vendor payment post"
+      }
+    }
+  ]
+}

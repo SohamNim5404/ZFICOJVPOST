@@ -1,0 +1,81 @@
+@Metadata.layer:#CORE
+@UI.headerInfo:{
+  typeName: 'Total Records',
+  typeNamePlural: 'Total Records'
+ }
+annotate entity ZC_ACCDOC
+    with 
+{
+    
+ @UI.facet: [{ id : 'InvoiceMaster',
+  purpose: #STANDARD,
+  type: #IDENTIFICATION_REFERENCE,
+  label: 'User Input',
+  position: 10 }]
+
+
+
+   @UI.selectionField: [{ position: 10 }]
+  @UI.lineItem: [{ position: 10 , importance: #HIGH},
+  { type: #FOR_ACTION, label: 'Jrposting', dataAction: 'post', invocationGrouping: #CHANGE_SET   }]
+ 
+
+  Id;
+
+  @UI.lineItem: [{ position: 20 }]
+//    @UI: { identification: [{ position: 10 }] }
+    Docid;
+    @UI.lineItem: [{ position: 30 }]
+    Bukrs;
+    @UI.lineItem: [{ position: 40 }]
+    Gjahr;
+    @UI.lineItem: [{ position: 50 }]
+    Blart;
+    @UI.lineItem: [{ position: 60 }]
+    Bldat;
+    @UI.lineItem: [{ position: 70 }]
+    Budat;
+    @UI.lineItem: [{ position: 80 }]
+    Waers;
+    //@UI.lineItem: [{ position: 90 }]
+//    Bupla;
+//    @UI.lineItem: [{ position: 100 }]
+//    Secco;
+//    @UI.lineItem: [{ position: 110 }]
+//    Xblnr;
+//    @UI.lineItem: [{ position: 120 }]
+//    Bktxt;
+//    @UI.lineItem: [{ position: 130 }]
+//    Hkont;
+//    @UI.lineItem: [{ position: 140 }]
+//    Dmbtr;
+//    @UI.lineItem: [{ position: 150 }]
+//    Shkzg;
+//    @UI.lineItem: [{ position: 160 }]
+//    Kostl;
+//    @UI.lineItem: [{ position: 170 }]
+//    Prctr;
+//    @UI.lineItem: [{ position: 180 }]
+//    Mwskz;
+//    @UI.lineItem: [{ position: 190 }]
+//    Bank;
+//    @UI.lineItem: [{ position: 200 }]
+//    Hbkid;
+//    @UI.lineItem: [{ position: 210 }]
+//    Kunnr;
+//    @UI.lineItem: [{ position: 220 }]
+//    Lifnr;
+//    @UI.lineItem: [{ position: 230 }]
+//    Umskz;
+//    @UI.lineItem: [{ position: 240 }]
+//    Belnr;
+//    @UI.lineItem: [{ position: 250 }]
+//    sgtxt;
+//    @UI.lineItem: [{ position: 260 }]
+//    ZUONR;
+//    @UI.lineItem: [{ position: 270 }]
+//    zlsch;
+//    @UI.lineItem: [{ position: 280 }]
+//    uname;
+    
+}

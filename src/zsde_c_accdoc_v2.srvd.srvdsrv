@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for JV'
+define service ZSDE_C_ACCDOC_v2 {
+  expose ZC_ACCDOC_V2;
+}

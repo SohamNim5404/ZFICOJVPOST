@@ -1,0 +1,4 @@
+@EndUserText.label: 'SB FOR API'
+define service ZSB_ACCDOC_API {
+  expose ZI_ACCDOC_API as Post;
+}

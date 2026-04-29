@@ -1,0 +1,113 @@
+managed implementation in class zbp_ins_i_jv_head unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZINS_I_JV_HEAD alias XLHead//alias <alias_name>
+
+persistent table zjv_excel_user
+lock master
+total etag LastChangedAt
+draft table zjv_exl_user_dr
+early numbering
+authorization master ( instance )
+etag master LocalLastChangedAt
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+
+  field ( readonly ) EndUser, FileId;
+
+  association _XLData { create; with draft; }
+
+  // Logic to read excel data into associated entity ZMAKS_I_XL_DATA
+  action uploadExcelData result [1] $self;
+
+  // Change File Status During Creation of new record
+  determination FillFileStatus on modify { field EndUser; }
+
+  // Change File Status When file is selected
+  determination FillSelectedStatus on modify { field Attachment; }
+
+  side effects
+  {
+    field Attachment affects field FileStatus;
+    action uploadExcelData affects $self, messages;
+  }
+  draft action Activate optimized;
+  draft action Edit;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for zjv_excel_user
+    {
+      EndUser            = end_user;
+      FileId             = file_id;
+      FileStatus         = file_status;
+      Attachment         = attachment;
+      Mimetype           = mimetype;
+      Filename           = filename;
+      insno              = insno;
+      LocalCreatedBy     = local_created_by;
+      LocalCreatedAt     = local_created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+    }
+}
+
+define behavior for ZI_ACCDOC alias XLData //alias <alias_name>
+implementation in class zbp_ins_i_jv_DATA unique
+persistent table zfit_accdoc
+draft table zfit_accdoc_dr
+lock dependent by _XLUser
+authorization dependent by _XLUser
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Id, EndUser, FileId,  LineNumber;
+  field ( readonly, numbering : managed ) LineId;
+
+  association _XLUser { with draft; }
+  action processData result [1] $self;
+
+  mapping for zfit_accdoc
+    {
+      id            = id;
+      EndUser      = end_user;
+      FileId       = file_id;
+      lineid       = line_id;
+      LineNumber       = line_no;
+      docid         = docid;
+      bukrs         = bukrs;
+      gjahr         = gjahr;
+      blart         = blart;
+      bldat         = bldat;
+      budat         = budat;
+      waers         = waers;
+      bupla         = bupla;
+      secco         = secco;
+      xblnr         = xblnr;
+      bktxt         = bktxt;
+      hkont         = hkont;
+      dmbtr         = dmbtr;
+      shkzg         = shkzg;
+      kostl         = kostl;
+      prctr         = prctr;
+      mwskz         = mwskz;
+      bank          = bank;
+      hbkid         = hbkid;
+      kunnr         = kunnr;
+      lifnr         = lifnr;
+      umskz         = umskz;
+      sgtxt         = sgtxt;
+      zuonr         = zuonr;
+      zlsch         = zlsch;
+      belnr         = belnr;
+      uname         = uname;
+      lastchangedat = lastchangedat;
+    }
+}

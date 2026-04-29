@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "ZEEL BULK UPLOAD"
+  },
+  "ui5AppDetails": {
+    "appId": "zfijv"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_74756BCE22461C0EE1C2D3AD6731590CCAA032F7_TM",
+    "semanticObject": "zfi_jv",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_74756BCE22461C0EE1C2D3AD6731590CCAA032F7_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "ZEEL BULK UPLOAD"
+      }
+    }
+  ]
+}

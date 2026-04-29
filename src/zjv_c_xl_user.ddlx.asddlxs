@@ -1,0 +1,92 @@
+@Metadata.layer:  #CORE
+@UI.headerInfo: {
+  typeName: 'User File',
+  typeNamePlural: 'User Files',
+  title: { type: #STANDARD, value: 'FileId' },
+  description: { type: #STANDARD, value: 'FileId' }
+}
+annotate entity ZJV_C_XL_USER
+    with 
+{
+   @UI.facet: [
+    {
+      id: 'idEndUser',
+      purpose: #HEADER,
+      position: 10,
+      type: #DATAPOINT_REFERENCE,
+      targetQualifier: 'tqEndUser'
+    },
+    {
+      id: 'idChgAt',
+      purpose: #HEADER,
+      position: 20,
+      type: #DATAPOINT_REFERENCE,
+      targetQualifier: 'tqChgAt'
+    },
+    {
+      id: 'idStatus',
+      purpose: #HEADER,
+      position: 30,
+      type: #DATAPOINT_REFERENCE,
+      targetQualifier: 'tqStatus'
+    },
+    {
+      id: 'idFile',
+      purpose: #STANDARD,
+      position: 50,
+      label: 'File Upload',
+      type: #IDENTIFICATION_REFERENCE
+    },
+    {
+      id: 'idData',
+      purpose: #STANDARD,
+      position: 60,
+      label: 'Excel Data',
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_XLData'
+    }
+  ]
+
+  /* End User */
+  // @UI.lineItem: [{ position: 10, label: 'Person Responsible' }]
+  @UI.dataPoint: { qualifier: 'tqEndUser', title: 'Person Responsible' }
+  @UI.identification: [
+    { type: #FOR_ACTION, label: 'Upload Data', dataAction: 'uploadExcelData' }
+  //     { type: #FOR_ACTION, label: 'PO creation', dataAction: 'create_po' }
+
+  ]
+
+  EndUser;
+
+  /* File ID */
+  // FileId;
+
+  /* File Status */
+  @UI.lineItem: [{ position: 20, label: 'File Status' }]
+  @UI.dataPoint: { qualifier: 'tqStatus', title: 'File Status' }
+  FileStatus;
+
+  /* Attachment */
+  @UI.identification: [{ position: 30, label: 'Select Excel File to Upload' }]
+  Attachment;
+
+  @UI.hidden: true
+  Mimetype;
+
+  /* Filename */
+  @UI.lineItem: [{ position: 40, label: 'Filename' }]
+  Filename;
+
+  @UI.hidden: true
+  LocalCreatedBy;
+
+  @UI.hidden: true
+  LocalCreatedAt;
+
+  //  @UI.hidden: true
+  //  locallastchangeby;
+
+  //  /* Last Changed At */
+  //  @UI.dataPoint: { qualifier: 'tqChgAt', title: 'Last Changed At' }
+  //  locallastchangeat;
+}

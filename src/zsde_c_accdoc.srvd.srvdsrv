@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def ZSDE_C_ACCDOC'
+define service ZSDE_C_ACCDOC {
+  expose ZC_ACCDOC;
+}

@@ -1,0 +1,45 @@
+unmanaged implementation in class zbp_i_accdoc_api unique;
+strict ( 2 );
+
+define behavior for ZI_ACCDOC_API //alias <alias_name>
+//persistent table zfit_accdoc
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) Id;
+
+  mapping for zfit_accdoc
+  {
+      Docid   = docid;
+      Bukrs   = bukrs;
+      Belnr   = belnr;
+      Gjahr   = gjahr;
+      Blart   = blart;
+      Bldat   = bldat;
+      Budat   = budat;
+      Waers   = waers;
+      Bupla   = bupla;
+      Secco   = secco;
+      Xblnr   = xblnr;
+      Bktxt   = bktxt;
+      Hkont   = hkont;
+      Dmbtr   = dmbtr;
+      Shkzg   = shkzg;
+      Kostl   = kostl;
+      Prctr   = prctr;
+      Mwskz   = mwskz;
+      Bank    = bank;
+      Hbkid   = hbkid;
+      Kunnr   = kunnr;
+      Lifnr   = lifnr;
+      Umskz   = umskz;
+      sgtxt   = sgtxt;
+      ZUONR   = ZUONR;
+      zlsch   = zlsch;
+      uname   = uname;
+    }
+}

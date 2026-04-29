@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "JV Posting"
+  },
+  "ui5AppDetails": {
+    "appId": "zicaccdocv2"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_9E5FEA7A1269A45CC73722F87356F3B354D0E878_TM",
+    "semanticObject": "JVPosting",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_9E5FEA7A1269A45CC73722F87356F3B354D0E878_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "JV Posting",
+        "icon": "sap-icon://legend"
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+CLASS zbp_i_accdoc_api DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_accdoc_api.
+protected section.
+private section.
+ENDCLASS.
+
+
+
+CLASS ZBP_I_ACCDOC_API IMPLEMENTATION.
+ENDCLASS.

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for JV Log'
+define service ZSD_JV_LOG {
+  expose ZC_JV_LOG;
+}

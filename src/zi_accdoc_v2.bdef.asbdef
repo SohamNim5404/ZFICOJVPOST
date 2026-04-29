@@ -1,0 +1,49 @@
+managed
+implementation in class zbp_i_accdoc_v2 unique;
+strict ( 2 );
+
+define behavior for ZI_ACCDOC_V2 //alias <alias_name>
+//persistent table zfit_accdoc
+with unmanaged save
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( numbering : managed, readonly ) Id;
+  determination post on save  {create;}
+
+
+mapping for zfit_accdoc control zfit_accdoc_x corresponding
+    {
+      Docid   = docid;
+      Bukrs   = bukrs;
+      Belnr   = belnr;
+      Gjahr   = gjahr;
+      Blart   = blart;
+      Bldat   = bldat;
+      Budat   = budat;
+      Waers   = waers;
+      Bupla   = bupla;
+      Secco   = secco;
+      Xblnr   = xblnr;
+      Bktxt   = bktxt;
+      Hkont   = hkont;
+      Dmbtr   = dmbtr;
+      Shkzg   = shkzg;
+      Kostl   = kostl;
+      Prctr   = prctr;
+      Mwskz   = mwskz;
+      Bank    = bank;
+      Hbkid   = hbkid;
+      Kunnr   = kunnr;
+      Lifnr   = lifnr;
+      Umskz   = umskz;
+      sgtxt   = sgtxt;
+      ZUONR   = ZUONR;
+      zlsch   = zlsch;
+      uname   = uname;
+    }
+}
